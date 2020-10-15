@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mover quadrado</title>
+    <style>
+        #canvas{
+            border: solid 3px #a9a9a9;
+        }  
+    </style>
+</head>
+<body>
+    <canvas id="canvas"width ="400" height ="400"> </canvas>
+    <button onclick="renderSonic()">Criar Personagem </button>
+    <button onclick="limparTela()">Limpar tela</button>
+    <button onclick="criarPlataforma()">criarPlataforma</button>
+    <button onclick="background()">background</button>
+
+
+<script>
+
+     var canvas = document.querySelector('#canvas');
+     var context = canvas.getContext("2d");
+     
+     function limparTela(){
+        context.clearRect(0, 0, canvas.width, canvas.height);
+           console.log('Tela foi limpada')
+     }
+     
+       function renderSonic(){
+        let img = new Image()
+     img.onload = function(){
+    context.drawImage(img, 5, 134, 35, 35)
+       console.log('Personagem criado')
+    
+    }
+    img.src = "Sonic.png"
+
+
+     }
+
+     function criarPlataforma(){
+        let img = new Image()
+     img.onload = function(){
+    context.drawImage(img, 0, 0, canvas.width, canvas.height)
+       console.log('Criar plataforma')
+    }
+    img.src = "Plataforma.png"
+
+
+     }
+
+     function background(){
+        let img = new Image()
+     img.onload = function(){
+    context.drawImage(img, 0, 0, canvas.width, canvas.height)
+       console.log('Background criado')
+    }
+    img.src = "background.jpg"
+
+
+     }
+     
+</script>
+
+</body>
+</html>
